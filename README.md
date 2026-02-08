@@ -4,23 +4,30 @@ Sistema de gestión de tareas con Vanilla JS y diseño SQL relacional
 Requirimientos: 
 Visual Studio Code ---> Live Server
 
-Estructura del Proyecto: 
 
+##  Estructura del Proyecto
+```
 proyecto/
-├── index.html                    # Página principal
-├── gestor-tareas/
-│   ├── css/
-│   │   └── styles.css           # Estilos --> Mobile First
-│   ├── js/
-│   │   ├── storage.js           # Capa de  localStorage (persistencia) 
-│   │   ├── utils.js             # Funciones auxiliares  (Reglas)
-│   │   ├── auth.js              # Sistema de autenticación
-│   │   ├── tasks.js             # Lógica de negocio de tareas
-│   │   ├── dom.js               # Manipulación del Dom
-│   │   └── main.js              # Inicialización y eventos 
-│   └── EsquemaSQL.sql           # Diseño de base de datos ---> Mysql server
-└── README.md
-
+│
+├── index.html                      # Página principal
+│
+└── gestor-tareas/
+    │
+    ├── css/
+    │   └── styles.css              # Estilos 
+    │
+    ├── js/
+    │   ├── storage.js              # Capa de localStorage / persistencia
+    │   ├── utils.js                # Funciones auxiliares
+    │   ├── auth.js                 # Sistema de autenticación
+    │   ├── tasks.js                # Lógica de negocio de tareas
+    │   ├── dom.js                  # Manipulación del DOM
+    │   └── main.js                 # Inicialización y eventos
+    │
+    ├── EsquemaSQL.sql              # Diseño de base de datos MySQL Server
+    │
+    └── README.md                   #
+```
 
 Funcionalidades por Rol
 Administrador
@@ -38,15 +45,17 @@ Usuario Normal
 --> No puede ver tareas de otros usuarios
 
 
-Responsive Design
+## Responsive Design
 El sistema es Mobile First y se adapta a:
 
 Móviles (< 768px): Layout vertical, botones full-width
+
 Tablets (768px - 1024px): Layout horizontal, grid 2 columnas
+
 Desktop (> 1024px): Layout optimizado, grid 3 columnas
 
 
-Seguridad
+## Seguridad
 Implementadas:
 
 -> Validación de permisos por rol
