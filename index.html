@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestor de Tareas Corporativo</title>
+    <link rel="stylesheet" href="gestor-tareas/css/styles.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Vista del Login - muestro contraseña, ideal no. -->
+        <div id="login-view">
+            <h2>Gestor de Tareas</h2>
+            <div class="login-form">
+                <input type="text" id="username" placeholder="Usuario" autocomplete="username">
+                <input type="password" id="password" placeholder="Contraseña" autocomplete="current-password">
+                <button class="btn btn-primary btn-block" id="btn-login">Iniciar Sesión</button>
+                <div id="login-error"></div>
+            </div>
+
+            <div class="credentials-hint">
+                <p><strong>Credenciales de prueba:</strong></p>
+                <p>
+                    Administrador: <strong>Admin_Jefe</strong> / admin123<br>
+                    Usuario: <strong>Dev_Junior</strong> / hola123
+                </p>
+            </div>
+        </div>
+
+        <!-- View del Dashboard -->
+        <div id="dashboard-view" class="hidden">
+            <header>
+                <div>
+                    <h2>Panel de Tareas</h2>
+                    <span id="user-display"></span>
+                </div>
+                <button class="btn btn-danger" id="btn-logout">Cerrar Sesión</button>
+            </header>
+
+            <!-- FILTROS -->
+            <div class="filters">
+                <input type="text" id="search-input" placeholder="Buscar tarea por título...">
+                <label>
+                    <input type="checkbox" id="filter-pending">
+                    Mostrar solo pendientes
+                </label>
+            </div>
+
+            <!-- Tareas Forma de Lista -->
+            <div id="tasks-container">
+                <p class="text-center text-muted">Cargando tareas...</p>
+            </div>
+
+            <!-- Nueva Tarea Formulario -->
+            <div class="form-section">
+                <h3>Crear Nueva Tarea</h3>
+                <form id="task-form">
+                    <div class="form-group form-group-full">
+                        <label for="task-title">Título de la tarea *</label>
+                        <input type="text" id="task-title" placeholder="Ej: Revisar reportes mensuales" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="task-date">Fecha de vencimiento *</label>
+                        <input type="date" id="task-date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="task-user">Asignar a</label>
+                        <select id="task-user">
+                            <option value="">Se te asignará a ti</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">
+                        Crear Tarea
+                    </button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Scripts de Rutas, corregir a js/storage.js ... si subo esto en mal orden en Git -->
+    <script src="gestor-tareas/js/storage.js"></script>
+    <script src="gestor-tareas/js/utils.js"></script>
+    <script src="gestor-tareas/js/auth.js"></script>
+    <script src="gestor-tareas/js/tasks.js"></script>
+    <script src="gestor-tareas/js/dom.js"></script>
+    <script src="gestor-tareas/js/main.js"></script>
+
+</body>
+
+</html>
